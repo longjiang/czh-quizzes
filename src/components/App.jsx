@@ -174,7 +174,7 @@ function App() {
             type="button"
             onClick={startQuiz}
             disabled={!selectedQuiz || status === 'active'}
-            className="w-full inline-flex justify-center rounded-lg bg-primary text-white font-semibold px-4 py-3 text-sm shadow-lg shadow-cyan-600/30 disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed hover:bg-sky-900 transition"
+            className="w-full inline-flex justify-center rounded-lg bg-primary text-white font-semibold px-4 py-3 text-sm shadow-lg shadow-cyan-600/30 hover:bg-sky-900 transition disabled:bg-slate-200 disabled:text-slate-600 disabled:shadow-none disabled:border disabled:border-slate-300 disabled:hover:bg-slate-200 disabled:cursor-not-allowed"
           >
             Start Quiz
           </button>
