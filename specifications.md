@@ -8,6 +8,7 @@ The goal is to build an interactive quiz and exam interface for **Chinese Zero t
 
 * The interface must be built using **React** for the front-end.
 * Styling must be implemented using **Tailwind CSS**.
+* The project should use an ES module structure with React components stored in `src/components/` and utilities in `src/utils/`. Use `src/main.jsx` as the entry point and `src/index.html` (or the root `index.html` shell) to host the root element.
 
 ---
 
