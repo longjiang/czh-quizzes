@@ -213,7 +213,7 @@ function App() {
                   <button
                     type="button"
                     onClick={() => finalizeQuiz(false)}
-                    className="flex-1 rounded-xl bg-gradient-to-r from-primary to-amber-500 text-white font-semibold px-4 py-3 text-sm shadow-lg shadow-amber-900/20 hover:from-cocoa hover:to-amber-600 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-500"
+                    className="flex-1 rounded-xl bg-gradient-to-r from-amber-600 via-primary to-cocoa text-white font-semibold px-4 py-3 text-sm shadow-lg shadow-amber-900/20 hover:from-cocoa hover:via-amber-700 hover:to-cocoa transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-500 disabled:bg-slate-200 disabled:text-slate-600"
                   >
                     Submit
                   </button>
