@@ -1,62 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chinese Zero to Hero - Quizzes</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="app-header">
-    <div>
-      <p class="eyebrow">Chinese Zero to Hero</p>
-      <h1>Interactive Quiz Center</h1>
-      <p class="subtitle">Choose a course, pick a quiz, and beat the clock.</p>
-    </div>
-    <div class="badge">Timed</div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chinese Zero to Hero - Quizzes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            },
+            colors: {
+              primary: '#0e7490',
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans">
+    <div id="root"></div>
 
-  <main class="layout">
-    <section class="panel">
-      <h2>1. Pick your course</h2>
-      <div class="control-row">
-        <label for="course-select">Course</label>
-        <select id="course-select" aria-label="Course"></select>
-      </div>
+    <script type="text/babel">
+      const { useEffect, useMemo, useState } = React;
 
-      <h2>2. Choose a quiz</h2>
-      <div class="control-row">
-        <label for="quiz-select">Quiz</label>
-        <select id="quiz-select" aria-label="Quiz" disabled></select>
-      </div>
+      const fetchJson = async (path) => {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error('Failed to load data');
+        return response.json();
+      };
 
-      <div class="meta" id="quiz-meta">Select a course and quiz to see details.</div>
+      const formatTime = (seconds) => {
+        const mins = Math.floor(seconds / 60)
+          .toString()
+          .padStart(2, '0');
+        const secs = Math.floor(seconds % 60)
+          .toString()
+          .padStart(2, '0');
+        return `${mins}:${secs}`;
+      };
 
-      <button id="start-btn" class="primary" disabled>Start Quiz</button>
-    </section>
+      function Header() {
+        return (
+          <header className="bg-gradient-to-br from-primary to-emerald-500 text-white px-7 py-6 shadow-lg flex justify-between items-center">
+            <div>
+              <p className="uppercase tracking-[0.2em] text-xs opacity-80">Chinese Zero to Hero</p>
+              <h1 className="text-3xl font-bold mt-1">Interactive Quiz Center</h1>
+              <p className="text-white/85">Choose a course, pick a quiz, and beat the clock.</p>
+            </div>
+            <div className="border border-white/50 bg-white/15 rounded-full px-3 py-2 text-sm font-semibold">
+              Timed
+            </div>
+          </header>
+        );
+      }
 
-    <section class="panel">
-      <div class="timer-area" id="timer-area" hidden>
-        <div class="timer-text">
-          <span id="timer-label">Time Remaining:</span>
-          <strong id="timer-display">00:00</strong>
-        </div>
-        <div class="progress">
-          <div id="progress-bar" class="progress-bar"></div>
-        </div>
-      </div>
+      function MetaText({ quiz, course }) {
+        if (!quiz || !course) return <p className="text-sm text-slate-500">Select a course and quiz to see details.</p>;
+        const perQuestion = quiz.timePerQuestionSeconds || course.timePerQuestionSeconds || 60;
+        return (
+          <p className="text-sm text-slate-500">
+            {quiz.questions.length} question(s) · {quiz.questions.length} minute(s) · {perQuestion} sec/question
+          </p>
+        );
+      }
 
-      <div id="question-area" class="questions" hidden></div>
+      function Timer({ totalSeconds, remainingSeconds }) {
+        const progress = totalSeconds > 0 ? Math.max((remainingSeconds / totalSeconds) * 100, 0) : 100;
+        return (
+          <div className="mb-4 p-3 bg-slate-100 rounded-xl border border-slate-200">
+            <div className="flex items-center justify-between font-semibold text-slate-800">
+              <span>Time Remaining:</span>
+              <span className="text-lg">{formatTime(Math.max(remainingSeconds, 0))}</span>
+            </div>
+            <div className="mt-3 h-3 bg-slate-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 transition-[width] duration-300"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+          </div>
+        );
+      }
 
-      <div class="actions" id="actions" hidden>
-        <button id="submit-btn" class="primary">Submit</button>
-        <button id="reset-btn" class="ghost">Reset</button>
-      </div>
+      function QuestionCard({ question, index, value, disabled, onChange }) {
+        const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+        return (
+          <article className="border border-slate-200 rounded-xl bg-white p-4 shadow-sm">
+            <h3 className="text-base font-semibold mb-3">
+              {index + 1}. {question.prompt}
+            </h3>
+            <div className="grid gap-2">
+              {question.options.map((optionText, optIndex) => {
+                const optionValue = letters[optIndex];
+                const isCorrect = value && question.correctOption === optionValue;
+                const isSelected = value === optionValue;
+                return (
+                  <label
+                    key={optionValue}
+                    className={`flex items-center gap-2 border rounded-lg px-3 py-2 text-sm transition-colors ${
+                      isCorrect
+                        ? 'border-emerald-400 bg-emerald-50'
+                        : isSelected && value !== question.correctOption
+                        ? 'border-rose-400 bg-rose-50'
+                        : 'border-slate-200 bg-slate-50'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name={`q-${index}`}
+                      className="accent-primary"
+                      value={optionValue}
+                      disabled={disabled}
+                      checked={isSelected || false}
+                      onChange={() => onChange(optionValue)}
+                    />
+                    <span>
+                      <strong className="mr-2">{optionValue}.</strong>
+                      {optionText}
+                    </span>
+                  </label>
+                );
+              })}
+            </div>
+          </article>
+        );
+      }
 
-      <div id="results" class="results" hidden></div>
-    </section>
-  </main>
+      function Results({ score, total, autoSubmitted }) {
+        if (score === null) return null;
+        return (
+          <div className="mt-4 p-4 rounded-xl border border-cyan-200 bg-cyan-50 text-slate-800">
+            <div className="text-lg font-bold">Score: {score} / {total}</div>
+            <p className="text-sm mt-1">{autoSubmitted ? 'Time is up!' : 'Submission received.'}</p>
+          </div>
+        );
+      }
 
-  <script src="script.js"></script>
-</body>
+      function App() {
+        const [courses, setCourses] = useState([]);
+        const [courseData, setCourseData] = useState({});
+        const [selectedCourseId, setSelectedCourseId] = useState('');
+        const [selectedQuizId, setSelectedQuizId] = useState('');
+        const [status, setStatus] = useState('idle'); // idle | active | finished
+        const [answers, setAnswers] = useState([]);
+        const [remainingSeconds, setRemainingSeconds] = useState(0);
+        const [totalSeconds, setTotalSeconds] = useState(0);
+        const [result, setResult] = useState({ score: null, autoSubmitted: false });
+
+        useEffect(() => {
+          fetchJson('quizzes/courses.json').then((data) => setCourses(data.courses || [])).catch(() => setCourses([]));
+        }, []);
+
+        useEffect(() => {
+          if (!selectedCourseId) return;
+          if (courseData[selectedCourseId]) return;
+
+          fetchJson(`quizzes/${courses.find((c) => c.id === selectedCourseId)?.file || ''}`)
+            .then((data) => {
+              setCourseData((prev) => ({ ...prev, [selectedCourseId]: data }));
+            })
+            .catch(() => {
+              setCourseData((prev) => ({ ...prev, [selectedCourseId]: null }));
+            });
+        }, [selectedCourseId, courses, courseData]);
+
+        const selectedCourse = selectedCourseId ? courseData[selectedCourseId] : null;
+        const selectedQuiz = useMemo(() => {
+          if (!selectedCourse || !selectedQuizId) return null;
+          return selectedCourse.quizzes.find((quiz) => quiz.id === selectedQuizId) || null;
+        }, [selectedCourse, selectedQuizId]);
+
+        useEffect(() => {
+          if (status !== 'active') return;
+          const interval = setInterval(() => {
+            setRemainingSeconds((prev) => Math.max(prev - 1, 0));
+          }, 1000);
+          return () => clearInterval(interval);
+        }, [status]);
+
+        useEffect(() => {
+          if (status === 'active' && remainingSeconds <= 0) {
+            finalizeQuiz(true);
+          }
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [remainingSeconds]);
+
+        const handleCourseChange = async (event) => {
+          const courseId = event.target.value;
+          setSelectedCourseId(courseId);
+          setSelectedQuizId('');
+          setStatus('idle');
+          setResult({ score: null, autoSubmitted: false });
+          setAnswers([]);
+          setRemainingSeconds(0);
+          setTotalSeconds(0);
+        };
+
+        const handleQuizChange = (event) => {
+          setSelectedQuizId(event.target.value);
+          setStatus('idle');
+          setResult({ score: null, autoSubmitted: false });
+          setAnswers([]);
+          setRemainingSeconds(0);
+          setTotalSeconds(0);
+        };
+
+        const startQuiz = () => {
+          if (!selectedQuiz || !selectedCourse) return;
+          const perQuestion = selectedQuiz.timePerQuestionSeconds || selectedCourse.timePerQuestionSeconds || 60;
+          const total = perQuestion * selectedQuiz.questions.length;
+          setTotalSeconds(total);
+          setRemainingSeconds(total);
+          setAnswers(new Array(selectedQuiz.questions.length).fill(null));
+          setStatus('active');
+          setResult({ score: null, autoSubmitted: false });
+        };
+
+        const handleAnswerChange = (index, value) => {
+          setAnswers((prev) => {
+            const next = [...prev];
+            next[index] = value;
+            return next;
+          });
+        };
+
+        const finalizeQuiz = (autoSubmitted = false) => {
+          if (!selectedQuiz) return;
+          const score = selectedQuiz.questions.reduce((total, question, index) => {
+            return total + (answers[index] === question.correctOption ? 1 : 0);
+          }, 0);
+          setStatus('finished');
+          setResult({ score, autoSubmitted });
+        };
+
+        const resetQuiz = () => {
+          setStatus('idle');
+          setResult({ score: null, autoSubmitted: false });
+          setAnswers([]);
+          setRemainingSeconds(0);
+          setTotalSeconds(0);
+        };
+
+        const disableSelectors = status === 'active';
+        const showActions = status === 'active';
+        const showQuestions = status !== 'idle' && selectedQuiz;
+
+        return (
+          <div>
+            <Header />
+            <main className="max-w-6xl mx-auto p-5 grid grid-cols-1 lg:grid-cols-[320px,1fr] gap-4">
+              <section className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm space-y-4">
+                <div>
+                  <h2 className="text-lg font-semibold">1. Pick your course</h2>
+                  <div className="mt-2 space-y-2">
+                    <label className="text-sm font-semibold text-slate-600" htmlFor="course-select">Course</label>
+                    <select
+                      id="course-select"
+                      className="w-full rounded-lg border-slate-200 text-sm px-3 py-2"
+                      value={selectedCourseId}
+                      onChange={handleCourseChange}
+                      disabled={disableSelectors}
+                    >
+                      <option value="">Select a course</option>
+                      {courses.map((course) => (
+                        <option key={course.id} value={course.id}>
+                          {course.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <h2 className="text-lg font-semibold">2. Choose a quiz</h2>
+                  <div className="mt-2 space-y-2">
+                    <label className="text-sm font-semibold text-slate-600" htmlFor="quiz-select">Quiz</label>
+                    <select
+                      id="quiz-select"
+                      className="w-full rounded-lg border-slate-200 text-sm px-3 py-2"
+                      value={selectedQuizId}
+                      onChange={handleQuizChange}
+                      disabled={!selectedCourse || disableSelectors}
+                    >
+                      <option value="">Select a quiz</option>
+                      {selectedCourse?.quizzes.map((quiz) => (
+                        <option key={quiz.id} value={quiz.id}>
+                          {quiz.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <MetaText quiz={selectedQuiz} course={selectedCourse} />
+
+                <button
+                  type="button"
+                  onClick={startQuiz}
+                  disabled={!selectedQuiz || status === 'active'}
+                  className="w-full inline-flex justify-center rounded-lg bg-primary text-white font-semibold px-4 py-3 text-sm shadow-lg shadow-cyan-600/30 disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed hover:bg-sky-900 transition"
+                >
+                  Start Quiz
+                </button>
+              </section>
+
+              <section className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                {status === 'active' && (
+                  <Timer totalSeconds={totalSeconds} remainingSeconds={remainingSeconds} />
+                )}
+
+                {showQuestions && (
+                  <div className="flex flex-col gap-4" aria-live="polite">
+                    {selectedQuiz.questions.map((question, index) => (
+                      <QuestionCard
+                        key={question.id || index}
+                        question={question}
+                        index={index}
+                        value={answers[index]}
+                        disabled={status === 'finished'}
+                        onChange={(value) => handleAnswerChange(index, value)}
+                      />
+                    ))}
+                  </div>
+                )}
+
+                {showActions && (
+                  <div className="flex gap-3 mt-4">
+                    <button
+                      type="button"
+                      onClick={() => finalizeQuiz(false)}
+                      className="flex-1 rounded-lg bg-primary text-white font-semibold px-4 py-3 text-sm shadow-lg shadow-cyan-600/30 hover:bg-sky-900 transition"
+                    >
+                      Submit
+                    </button>
+                    <button
+                      type="button"
+                      onClick={resetQuiz}
+                      className="flex-1 rounded-lg border border-slate-200 text-primary font-semibold px-4 py-3 text-sm hover:bg-slate-100 transition"
+                    >
+                      Reset
+                    </button>
+                  </div>
+                )}
+
+                {status === 'finished' && (
+                  <div className="mt-4 flex flex-col gap-3">
+                    <Results
+                      score={result.score}
+                      total={selectedQuiz?.questions.length || 0}
+                      autoSubmitted={result.autoSubmitted}
+                    />
+                    <button
+                      type="button"
+                      onClick={resetQuiz}
+                      className="self-start rounded-lg border border-slate-200 text-primary font-semibold px-4 py-2 text-sm hover:bg-slate-100 transition"
+                    >
+                      Start Over
+                    </button>
+                  </div>
+                )}
+              </section>
+            </main>
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+  </body>
 </html>
