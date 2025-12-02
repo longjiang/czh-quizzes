@@ -1,0 +1,9 @@
+{
+  "courses": [
+    {
+      "id": "intro-chinese",
+      "title": "Introduction to Chinese",
+      "file": "introduction.json"
+    }
+  ]
+}

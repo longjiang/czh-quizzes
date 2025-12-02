@@ -1,0 +1,1060 @@
+{
+  "courseId": "intro-chinese",
+  "title": "Introduction to Chinese",
+  "description": "Quizzes for the Introduction to Chinese course across Lessons 1-12.",
+  "timePerQuestionSeconds": 60,
+  "quizzes": [
+    {
+      "id": "lesson-1",
+      "title": "Lesson 1",
+      "questions": [
+        {
+          "prompt": "How many tones are there in Mandarin?",
+          "options": [
+            "Four tones and a neutral tone",
+            "Six tones, including the light tone",
+            "Five tones plus two emphatic tones",
+            "Three principal tones and an optional glide tone"
+          ],
+          "correctOption": "A"
+        },
+        {
+          "prompt": "What does nǐ hǎo mean?",
+          "options": [
+            "Goodbye",
+            "Hello",
+            "How are you?",
+            "Thank you"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What does āyí mean?",
+          "options": [
+            "Older sister",
+            "Younger brother",
+            "Aunt or auntie",
+            "Elder male relative"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: Lù Jiànyáng hǎo.",
+          "options": [
+            "Goodbye, Lu Jianyang",
+            "Lu Jianyang is good",
+            "Hello, Lu Jianyang",
+            "Lu Jianyang, how are you?"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: Wǒ shì Hè Méi.",
+          "options": [
+            "I know He Mei",
+            "She is He Mei",
+            "I am good, He Mei",
+            "I am He Mei"
+          ],
+          "correctOption": "D"
+        }
+      ]
+    },
+    {
+      "id": "lesson-2",
+      "title": "Lesson 2",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of bái bái",
+          "options": [
+            "Hello",
+            "See you later",
+            "Bye-bye",
+            "Good night"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of zài jiàn",
+          "options": [
+            "Hello again",
+            "See you next time",
+            "Goodbye",
+            "See you soon"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of xià cì jiàn",
+          "options": [
+            "See you next time",
+            "Next week",
+            "See you later",
+            "Until tomorrow"
+          ],
+          "correctOption": "A"
+        },
+        {
+          "prompt": "Give the correct meaning of āyí zài jiàn",
+          "options": [
+            "Hello, auntie",
+            "Auntie is leaving",
+            "Bye-bye, auntie",
+            "Thank you, auntie"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of qí míngyuè zài jiàn",
+          "options": [
+            "Hello, Qi Mingyue",
+            "Qi Mingyue is good",
+            "Goodbye, Qi Mingyue",
+            "Qi Mingyue, next time"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What does “xià” in pinyin sound like?",
+          "options": [
+            "Sounds like [zee-ah]",
+            "Sounds like [sha]",
+            "Sounds like [shia]",
+            "Sounds like [ksia]"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "How is “c” in pinyin pronounced?",
+          "options": [
+            "It is pronounced like [ch]",
+            "It is pronounced like [k]",
+            "It is pronounced like [ts]",
+            "It is pronounced like [s]"
+          ],
+          "correctOption": "C"
+        }
+      ]
+    },
+    {
+      "id": "lesson-3",
+      "title": "Lesson 3",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of bà",
+          "options": [
+            "Mom",
+            "Brother",
+            "Dad",
+            "Grandma"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of kuài",
+          "options": [
+            "Slow",
+            "Fast",
+            "Happy",
+            "Tired"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "How do you respond when someone is calling out to you?",
+          "options": [
+            "Wǒ lái le (I'm coming)",
+            "Shì de (Yes)",
+            "Hǎo de (Okay)",
+            "āi"
+          ],
+          "correctOption": "D"
+        },
+        {
+          "prompt": "How is “diǎnr” pronounced?",
+          "options": [
+            "It sounds like [dee-an-er] — \"r\" is heavily rolled",
+            "It sounds like [dee-an-nerr] — \"n\" is clearly pronounced",
+            "It sounds like [diar] — “n” is not pronounced",
+            "It sounds like [di-an-er] — a blend of two syllables"
+          ],
+          "correctOption": "C"
+        }
+      ]
+    },
+    {
+      "id": "lesson-4",
+      "title": "Lesson 4",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of: xiè xiè",
+          "options": [
+            "Hello",
+            "Goodbye",
+            "Excuse me",
+            "Thank you"
+          ],
+          "correctOption": "D"
+        },
+        {
+          "prompt": "Give the correct meaning of: kè qì",
+          "options": [
+            "To be very hungry",
+            "To be overly polite",
+            "To be generous",
+            "To be quick"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What is the common reply to “xiè xiè”?",
+          "options": [
+            "Méi guān xì (It doesn't matter)",
+            "Zài jiàn (Goodbye)",
+            "Bù kè qì",
+            "Nǐ hǎo (Hello)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: lǎo péng yǒu",
+          "options": [
+            "Young acquaintance",
+            "Old friend",
+            "New classmate",
+            "Close relative"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What does “a” express in “xiè xiè a”?",
+          "options": [
+            "It makes the statement a question",
+            "It emphasizes urgency",
+            "It shows displeasure",
+            "It softens the tone"
+          ],
+          "correctOption": "D"
+        },
+        {
+          "prompt": "How is “ui” pronounced?",
+          "options": [
+            "It sounds like [oo-ee]",
+            "It sounds like [way]",
+            "It sounds like [wei]",
+            "It sounds like [oo-eye]"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "How is “ke” pronounced?",
+          "options": [
+            "It sounds like [kee]",
+            "It sounds like [kay]",
+            "It sounds like [kuh]",
+            "It sounds like [keh]"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "How is “q” pronounced?",
+          "options": [
+            "It sounds like [g]",
+            "It sounds like [ts]",
+            "It sounds like [sh]",
+            "It sounds like [ch]"
+          ],
+          "correctOption": "D"
+        }
+      ]
+    },
+    {
+      "id": "lesson-5",
+      "title": "Lesson 5",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of: duì bù qǐ",
+          "options": [
+            "Thank you",
+            "Excuse me",
+            "Sorry",
+            "Goodbye"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: wǎn",
+          "options": [
+            "Early",
+            "Fast",
+            "Late",
+            "Good"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the common reply to “duì bù qǐ”?",
+          "options": [
+            "Bù kè qì (You're welcome)",
+            "Xiè xiè (Thank you)",
+            "Méi guān xì (It doesn't matter/No worries) or méi shì (It's okay/No worries)",
+            "Hǎo de (Okay)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: kāihuì",
+          "options": [
+            "Open the door",
+            "Have a meeting",
+            "Start working",
+            "Close the book"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What is the role of “le” in the phrase wǒ lái wǎn le?",
+          "options": [
+            "It makes the statement a question",
+            "It’s an interrogative particle",
+            "It emphasizes the subject",
+            "It’s a particle denoting change to a completed state"
+          ],
+          "correctOption": "D"
+        },
+        {
+          "prompt": "How is wǒ pronounced?",
+          "options": [
+            "It sounds like [woe]",
+            "It sounds like [voh]",
+            "It sounds like [oo]",
+            "It sounds like [ua]"
+          ],
+          "correctOption": "D"
+        },
+        {
+          "prompt": "How is the final vowel ěng in děng pronounced?",
+          "options": [
+            "It sounds like [eng]",
+            "It sounds like [ung]",
+            "It sounds like [ing]",
+            "It sounds like [ong]"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "How is the final vowel ì in shì pronounced?",
+          "options": [
+            "It sounds like [ee]",
+            "It sounds like [i] as in \"pin\"",
+            "It sounds like \"ge\" as in “massage”",
+            "It sounds like [err]"
+          ],
+          "correctOption": "C"
+        }
+      ]
+    },
+    {
+      "id": "lesson-6",
+      "title": "Lesson 6",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of: shuǐguǒ",
+          "options": [
+            "Water",
+            "Fruit",
+            "Vegetable",
+            "Drink"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "Give the correct meaning of: hē jiǔ",
+          "options": [
+            "Drink water",
+            "Eat food",
+            "Drink alcohol",
+            "Have tea"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: nín",
+          "options": [
+            "Your",
+            "He/She",
+            "You (polite)",
+            "We"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: bié máng le",
+          "options": [
+            "Be busy now",
+            "Don't worry",
+            "Stop being busy / Don't trouble yourself",
+            "Get to work"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What phrase or word is commonly used to invite someone to an action (e.g., \"Come, eat fruit\")?",
+          "options": [
+            "Qǐng (Please)",
+            "Kuài (Fast)",
+            "Lái (or lái lái lái)",
+            "Yào (Want)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "How do you say \"We, us\" in Chinese?",
+          "options": [
+            "Tāmen",
+            "Nǐmen",
+            "Wǒmen",
+            "Rénmen"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the verb for \"to accompany\"?",
+          "options": [
+            "Zǒu",
+            "Qù",
+            "Péi",
+            "Kàn"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What structure is used to dissuade someone from an action?",
+          "options": [
+            "Bù + [action] + guò",
+            "Wǒ bù + [action]",
+            "Bié + [action] + le",
+            "Yào + [action] + ma"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "How is the final vowel ī in chī pronounced?",
+          "options": [
+            "It sounds like [ee] as in \"see\"",
+            "It sounds like [i] as in \"pin\"",
+            "It sounds like [ge] as in massage",
+            "It sounds like [e] as in \"get\""
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: chá",
+          "options": [
+            "Coffee",
+            "Water",
+            "Tea",
+            "Milk"
+          ],
+          "correctOption": "C"
+        }
+      ]
+    },
+    {
+      "id": "lesson-7",
+      "title": "Lesson 7",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of: zǒu",
+          "options": [
+            "To stop",
+            "To run",
+            "To walk, go",
+            "To drive"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What particle is used when making a suggestion (e.g., \"Let's go\")?",
+          "options": [
+            "Ma (question particle)",
+            "Ne (follow-up question particle)",
+            "Ba",
+            "Le (change of state particle)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the Chinese word for \"amusement park\"?",
+          "options": [
+            "Gōngyuán (Public park)",
+            "Bówùguǎn (Museum)",
+            "Yóulèchǎng",
+            "Guǎngchǎng (Square)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: děng",
+          "options": [
+            "To arrive",
+            "To hurry",
+            "To wait",
+            "To leave"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What structure do you use to ask someone to do something momentarily?",
+          "options": [
+            "Yào + [Verb] + le",
+            "[Verb] + yī xià",
+            "Gěi + [Verb]",
+            "Qǐng + [Verb] + de"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What is the structure used to call someone to action?",
+          "options": [
+            "[Action] + ma",
+            "Bù + [Action]",
+            "[Verb] + ba, or [Verb] x 3",
+            "Wǒ + [Action]"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What phrase is used to ask someone to hurry up?",
+          "options": [
+            "Màn diǎn (Slower)",
+            "Bù máng (Not busy)",
+            "Kuài diǎn",
+            "Zǎo diǎn (Earlier)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "How do you say \"Let's go, let's go, let's go\"?",
+          "options": [
+            "Qù qù qù",
+            "Lái lái lái",
+            "Kuài kuài kuài",
+            "Zǒu zǒu zǒu"
+          ],
+          "correctOption": "D"
+        }
+      ]
+    },
+    {
+      "id": "lesson-8",
+      "title": "Lesson 8",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of: màn",
+          "options": [
+            "Fast",
+            "Busy",
+            "Slow",
+            "Tired"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What phrase means \"Slow down\"?",
+          "options": [
+            "Kuài diǎn (Hurry up)",
+            "Bù máng (Not busy)",
+            "Màn diǎn",
+            "Zǎo diǎn (Earlier)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: qǐng (verb)",
+          "options": [
+            "To welcome",
+            "To invite (as a guest)",
+            "To treat someone (e.g., to a meal)",
+            "To thank"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: chī fàn",
+          "options": [
+            "To drink water",
+            "To eat fruit",
+            "To eat a meal",
+            "To cook dinner"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "How do you say \"I want … in Chinese?",
+          "options": [
+            "Tā yào … (He/She wants)",
+            "Nǐ yào … (You want)",
+            "Wǒ yào …",
+            "Wǒ shì … (I am)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What phrase means \"This one\"?",
+          "options": [
+            "Nà gè (That one)",
+            "Zhè gè",
+            "Nǎ gè (Which one)",
+            "Yí gè (One)"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What is a common way to say \"Okay\" or \"Yeah\" informally?",
+          "options": [
+            "Shì de (Yes, formal)",
+            "Kěyǐ (Can, permissible)",
+            "ēn",
+            "Xiè xiè (Thank you)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "How do you express agreement or say \"Ok\"?",
+          "options": [
+            "Bù xíng (Not okay)",
+            "Hǎo, hǎo de (or hǎo hǎo hǎo)",
+            "Méi guān xì (No worries)",
+            "Duì bù qǐ (Sorry)"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What structure is used to ask someone to hurry up?",
+          "options": [
+            "Màn diǎn (Slow down)",
+            "Kuài repeated three times, or kuài diǎn",
+            "Qǐng + [Verb]",
+            "Wǒ yào + [Action]"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What is the general structure used to express what you wish to have?",
+          "options": [
+            "Wǒ shì + [thing] (I am)",
+            "Wǒ bù yào + [thing] (I don't want)",
+            "Wǒ yào + [thing]",
+            "Wǒ xǐhuān + [thing] (I like)"
+          ],
+          "correctOption": "C"
+        }
+      ]
+    },
+    {
+      "id": "lesson-9",
+      "title": "Lesson 9",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of: xiǎng",
+          "options": [
+            "To walk, to go",
+            "To think, to want",
+            "To eat, to drink",
+            "To see, to look"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "Give the correct meaning of: gē (noun)",
+          "options": [
+            "Younger sister",
+            "Mother",
+            "Older brother",
+            "Father"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the verb for “may, to have permission?”",
+          "options": [
+            "Kàn (To look)",
+            "Xíng",
+            "Chī (To eat)",
+            "Shì (To be)"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What is the Chinese word for \"today\"?",
+          "options": [
+            "Zuótiān (Yesterday)",
+            "Míngtiān (Tomorrow)",
+            "Jīntiān",
+            "Hòutiān (The day after tomorrow)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What adverb means “too” or “excessively?”",
+          "options": [
+            "Hěn (Very)",
+            "Dōu (All)",
+            "Tài",
+            "Yě (Also)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What structure is used to express that something is excessive (e.g., \"too late\")?",
+          "options": [
+            "Hěn + [Adj] + de",
+            "Tài + [Adj] + le",
+            "Bù + [Adj] + guò",
+            "Yòu + [Adj]"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What structure is used to deny someone permission?",
+          "options": [
+            "Tài xíng",
+            "Wǒ xíng",
+            "Bù xíng",
+            "Hěn xíng"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the general structure used to express your wish (e.g., \"I want to eat\")?",
+          "options": [
+            "Wǒ shì + [Verb]",
+            "Wǒ yào + [Noun]",
+            "Wǒ xiǎng + [Verb]",
+            "Wǒ bù + [Verb]"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What does the phrase zěnme le mean?",
+          "options": [
+            "Where are you going?",
+            "How are you?",
+            "What's the matter / What happened?",
+            "Who is that?"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: yīqǐ",
+          "options": [
+            "Alone",
+            "Yesterday",
+            "Together",
+            "Right now"
+          ],
+          "correctOption": "C"
+        }
+      ]
+    },
+    {
+      "id": "lesson-10",
+      "title": "Lesson 10",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of: yǒu",
+          "options": [
+            "To not have",
+            "To want",
+            "To have",
+            "To go"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the Chinese word for \"beer\"?",
+          "options": [
+            "Chá (Tea)",
+            "Shuǐ (Water)",
+            "Píjiǔ",
+            "Jiǔ (Alcohol)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What particle is added to the end of a statement to turn it into a yes/no question?",
+          "options": [
+            "Ba (suggestion particle)",
+            "Ne (follow-up particle)",
+            "Ma",
+            "Le (change of state particle)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: zánmen",
+          "options": [
+            "You all",
+            "They",
+            "We, us (inclusive of the person being spoken to)",
+            "He and I"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: nán péngyou",
+          "options": [
+            "Male friend",
+            "Boyfriend",
+            "Girlfriend",
+            "Male colleague"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "Give the correct meaning of: nǚ péngyou",
+          "options": [
+            "Female friend",
+            "Female colleague",
+            "Girlfriend",
+            "Female teacher"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What phrase means \"not have\" or \"there is not\"?",
+          "options": [
+            "Bù yǒu",
+            "Bù shì",
+            "Méiyǒu",
+            "Bù xíng"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the basic structure used to state that you possess something?",
+          "options": [
+            "Wǒ shì + [noun]",
+            "Yǒu + [noun]",
+            "Wǒ yào + [noun]",
+            "Wǒ xiǎng + [noun]"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "How do you form a negative answer when asked if you have something?",
+          "options": [
+            "Bù",
+            "Bù yào",
+            "Bù shì",
+            "Méiyǒu"
+          ],
+          "correctOption": "D"
+        },
+        {
+          "prompt": "What is the phrase used to express \"not yet\"?",
+          "options": [
+            "Yǐjīng",
+            "Xiànzài",
+            "Hái méiyǒu",
+            "Wánquán"
+          ],
+          "correctOption": "C"
+        }
+      ]
+    },
+    {
+      "id": "lesson-11",
+      "title": "Lesson 11",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of: qù",
+          "options": [
+            "To come",
+            "To wait",
+            "To go",
+            "To walk"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the Chinese word for \"studio\" or \"workspace\"?",
+          "options": [
+            "Bàngōngshì (Office)",
+            "Xuéxiào (School)",
+            "Gōngzuòshì",
+            "Yóulèchǎng (Amusement park)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: shàngbān",
+          "options": [
+            "To get off work",
+            "To go to school",
+            "To go to work",
+            "To start working"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Give the correct meaning of: xiàbān",
+          "options": [
+            "To start work",
+            "To eat lunch",
+            "To get off work",
+            "To go home"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the phrase for \"dinner\"?",
+          "options": [
+            "Zǎofàn (Breakfast)",
+            "Wǔfàn (Lunch)",
+            "Wǎnfàn",
+            "Tiānfàn (Heavenly meal)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the verb for “to be” that can also mean “yes?”",
+          "options": [
+            "Yǒu (To have)",
+            "Bù (Not)",
+            "Shì",
+            "Zài (To be at)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the Chinese word for \"yesterday\"?",
+          "options": [
+            "Jīntiān (Today)",
+            "Míngtiān (Tomorrow)",
+            "Zuótiān",
+            "Hòutiān (The day after tomorrow)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the Chinese word for \"evening\"?",
+          "options": [
+            "Zǎoshàng (Morning)",
+            "Zhōngwǔ (Noon)",
+            "Wǎnshàng",
+            "Xiàwǔ (Afternoon)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What is the structure used to ask for confirmation of a statement?",
+          "options": [
+            "[Statement] + ma (Yes/No question)",
+            "[Statement] + ba (Suggestion)",
+            "[Statement] + a",
+            "[Statement] + ne (Follow-up)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "Which of the following is not an answer in the affirmative?",
+          "options": [
+            "Shì (To be / Yes)",
+            "Duì (Correct / Right)",
+            "Zǒu (To go)",
+            "ēn (Okay / Yeah)"
+          ],
+          "correctOption": "C"
+        }
+      ]
+    },
+    {
+      "id": "lesson-12",
+      "title": "Lesson 12",
+      "questions": [
+        {
+          "prompt": "Give the correct meaning of: huílái",
+          "options": [
+            "To go out",
+            "To leave",
+            "To go home",
+            "To come back"
+          ],
+          "correctOption": "D"
+        },
+        {
+          "prompt": "Give the correct meaning of: kū",
+          "options": [
+            "To laugh",
+            "To run",
+            "To cry",
+            "To shout"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What particle indicates that an action has been completed?",
+          "options": [
+            "Ma (Question particle)",
+            "Ba (Suggestion particle)",
+            "Ne (Follow-up particle)",
+            "Le"
+          ],
+          "correctOption": "D"
+        },
+        {
+          "prompt": "Give the correct meaning of: chǎojià",
+          "options": [
+            "To eat dinner",
+            "To have a meeting",
+            "To talk loudly",
+            "To quarrel, to have a fight"
+          ],
+          "correctOption": "D"
+        },
+        {
+          "prompt": "What is the informal word used to mean \"two people?\"",
+          "options": [
+            "Liǎng gè (Two of something)",
+            "Liǎ",
+            "Èr shí (Twenty)",
+            "Gè rén (Individual)"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "Answer the question “nǐ kū le?” (Did you cry?) in the negative.",
+          "options": [
+            "Bù kū (Do not cry)",
+            "Bù shì (It is not)",
+            "Méiyǒu",
+            "Bù xíng (Not permitted)"
+          ],
+          "correctOption": "C"
+        },
+        {
+          "prompt": "What phrase means \"you two\"?",
+          "options": [
+            "Nǐmen (You all)",
+            "Nǐmen liǎ",
+            "Wǒmen liǎ (We two)",
+            "Nǐ gè"
+          ],
+          "correctOption": "B"
+        },
+        {
+          "prompt": "What is the meaning of ēn when used as a reply?",
+          "options": [
+            "No",
+            "Goodbye",
+            "Yes / Mm.",
+            "Thank you"
+          ],
+          "correctOption": "C"
+        }
+      ]
+    }
+  ]
+}
