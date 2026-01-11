@@ -117,137 +117,137 @@ function App() {
   const showActions = status === 'active';
   const showQuestions = status !== 'idle' && selectedQuiz;
 
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-100 via-white to-slate-100 text-slate-900">
-      <Header />
-      <main className="relative max-w-6xl mx-auto px-4 pb-12 -mt-14">
-        <div className="grid grid-cols-1 lg:grid-cols-[340px,1fr] gap-5">
-          <section className="bg-white/90 backdrop-blur rounded-2xl border border-slate-200/80 p-6 shadow-xl shadow-slate-900/5 space-y-5">
-            <div className="flex items-start gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary font-semibold">1</div>
-              <div className="flex-1">
-                <h2 className="text-lg font-semibold">Pick your course</h2>
-                <div className="mt-2 space-y-2">
-                  <label className="text-sm font-semibold text-slate-600" htmlFor="course-select">
-                    Course
-                  </label>
-                  <select
-                    id="course-select"
-                    className="w-full rounded-lg border border-slate-200 bg-white text-sm px-3 py-2 shadow-inner disabled:bg-slate-100"
-                    value={selectedCourseId}
-                    onChange={handleCourseChange}
-                    disabled={disableSelectors}
-                  >
-                    <option value="">Select a course</option>
-                    {courses.map((course) => (
-                      <option key={course.id} value={course.id}>
-                        {course.title}
-                      </option>
-                    ))}
-                  </select>
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-sand via-white to-sand text-slate-900">
+        <Header />
+        <main className="relative max-w-6xl mx-auto px-4 pb-12 -mt-10 md:-mt-14">
+          <div className="grid grid-cols-1 lg:grid-cols-[340px,1fr] gap-5 lg:gap-7">
+            <section className="bg-white/95 backdrop-blur rounded-2xl border border-amber-100 p-6 shadow-xl shadow-amber-900/5 space-y-5">
+              <div className="flex items-start gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-cocoa font-semibold">1</div>
+                <div className="flex-1">
+                  <h2 className="text-lg font-semibold text-cocoa">Pick your course</h2>
+                  <div className="mt-2 space-y-2">
+                    <label className="text-sm font-semibold text-slate-600" htmlFor="course-select">
+                      Course
+                    </label>
+                    <select
+                      id="course-select"
+                      className="w-full rounded-lg border border-amber-100 bg-white text-sm px-3 py-2 shadow-inner disabled:bg-slate-100"
+                      value={selectedCourseId}
+                      onChange={handleCourseChange}
+                      disabled={disableSelectors}
+                    >
+                      <option value="">Select a course</option>
+                      {courses.map((course) => (
+                        <option key={course.id} value={course.id}>
+                          {course.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="flex items-start gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary font-semibold">2</div>
-              <div className="flex-1">
-                <h2 className="text-lg font-semibold">Choose a quiz</h2>
-                <div className="mt-2 space-y-2">
-                  <label className="text-sm font-semibold text-slate-600" htmlFor="quiz-select">
-                    Quiz
-                  </label>
-                  <select
-                    id="quiz-select"
-                    className="w-full rounded-lg border border-slate-200 bg-white text-sm px-3 py-2 shadow-inner disabled:bg-slate-100"
-                    value={selectedQuizId}
-                    onChange={handleQuizChange}
-                    disabled={!selectedCourse || disableSelectors}
-                  >
-                    <option value="">Select a quiz</option>
-                    {selectedCourse?.quizzes.map((quiz) => (
-                      <option key={quiz.id} value={quiz.id}>
-                        {quiz.title}
-                      </option>
-                    ))}
-                  </select>
+              <div className="flex items-start gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-cocoa font-semibold">2</div>
+                <div className="flex-1">
+                  <h2 className="text-lg font-semibold text-cocoa">Choose a quiz</h2>
+                  <div className="mt-2 space-y-2">
+                    <label className="text-sm font-semibold text-slate-600" htmlFor="quiz-select">
+                      Quiz
+                    </label>
+                    <select
+                      id="quiz-select"
+                      className="w-full rounded-lg border border-amber-100 bg-white text-sm px-3 py-2 shadow-inner disabled:bg-slate-100"
+                      value={selectedQuizId}
+                      onChange={handleQuizChange}
+                      disabled={!selectedCourse || disableSelectors}
+                    >
+                      <option value="">Select a quiz</option>
+                      {selectedCourse?.quizzes.map((quiz) => (
+                        <option key={quiz.id} value={quiz.id}>
+                          {quiz.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="rounded-xl bg-slate-50 border border-slate-200 px-4 py-3">
-              <MetaText quiz={selectedQuiz} course={selectedCourse} />
-            </div>
+              <div className="rounded-xl bg-amber-50 border border-amber-100 px-4 py-3 text-slate-700">
+                <MetaText quiz={selectedQuiz} course={selectedCourse} />
+              </div>
 
-            <button
-              type="button"
-              onClick={startQuiz}
-              disabled={!selectedQuiz || status === 'active'}
-              className="w-full inline-flex justify-center rounded-xl bg-gradient-to-r from-primary via-cyan-700 to-emerald-600 text-white font-semibold px-4 py-3 text-sm shadow-lg shadow-primary/30 hover:from-sky-900 hover:via-cyan-800 hover:to-emerald-700 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary disabled:bg-slate-200 disabled:text-slate-600 disabled:shadow-none disabled:border disabled:border-slate-300 disabled:hover:bg-slate-200 disabled:cursor-not-allowed"
-            >
-              Start Quiz
-            </button>
-          </section>
+              <button
+                type="button"
+                onClick={startQuiz}
+                disabled={!selectedQuiz || status === 'active'}
+                className="w-full inline-flex justify-center rounded-xl bg-gradient-to-r from-primary via-amber-500 to-orange-500 text-white font-semibold px-4 py-3 text-sm shadow-lg shadow-amber-900/20 hover:from-cocoa hover:via-amber-600 hover:to-orange-600 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-500 disabled:bg-slate-200 disabled:text-slate-600 disabled:shadow-none disabled:border disabled:border-slate-300 disabled:hover:bg-slate-200 disabled:cursor-not-allowed"
+              >
+                Start Quiz
+              </button>
+            </section>
 
-          <section className="bg-white/95 backdrop-blur rounded-2xl border border-slate-200/80 p-6 shadow-xl shadow-slate-900/5">
-            {status === 'active' && <Timer totalSeconds={totalSeconds} remainingSeconds={remainingSeconds} />}
+            <section className="bg-white/95 backdrop-blur rounded-2xl border border-amber-100 p-6 shadow-xl shadow-amber-900/5">
+              {status === 'active' && <Timer totalSeconds={totalSeconds} remainingSeconds={remainingSeconds} />}
 
-            {showQuestions && (
-              <div className="flex flex-col gap-4" aria-live="polite">
-                {selectedQuiz.questions.map((question, index) => (
-                  <QuestionCard
-                    key={question.id || index}
-                    question={question}
-                    index={index}
-                    value={answers[index]}
-                    disabled={status === 'finished'}
-                    revealAnswers={status === 'finished'}
-                    onChange={(value) => handleAnswerChange(index, value)}
+              {showQuestions && (
+                <div className="flex flex-col gap-4" aria-live="polite">
+                  {selectedQuiz.questions.map((question, index) => (
+                    <QuestionCard
+                      key={question.id || index}
+                      question={question}
+                      index={index}
+                      value={answers[index]}
+                      disabled={status === 'finished'}
+                      revealAnswers={status === 'finished'}
+                      onChange={(value) => handleAnswerChange(index, value)}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {showActions && (
+                <div className="flex flex-col sm:flex-row gap-3 mt-6">
+                  <button
+                    type="button"
+                    onClick={() => finalizeQuiz(false)}
+                    className="flex-1 rounded-xl bg-gradient-to-r from-amber-600 via-primary to-cocoa text-white font-semibold px-4 py-3 text-sm shadow-lg shadow-amber-900/20 hover:from-cocoa hover:via-amber-700 hover:to-cocoa transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-500 disabled:bg-slate-200 disabled:text-slate-600"
+                  >
+                    Submit
+                  </button>
+                  <button
+                    type="button"
+                    onClick={resetQuiz}
+                    className="flex-1 rounded-xl border border-amber-200 text-primary font-semibold px-4 py-3 text-sm hover:bg-amber-50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-200"
+                  >
+                    Reset
+                  </button>
+                </div>
+              )}
+
+              {status === 'finished' && (
+                <div className="mt-6 flex flex-col gap-3">
+                  <Results
+                    score={result.score}
+                    total={selectedQuiz?.questions.length || 0}
+                    autoSubmitted={result.autoSubmitted}
                   />
-                ))}
-              </div>
-            )}
-
-            {showActions && (
-              <div className="flex flex-col sm:flex-row gap-3 mt-6">
-                <button
-                  type="button"
-                  onClick={() => finalizeQuiz(false)}
-                  className="flex-1 rounded-xl bg-primary text-white font-semibold px-4 py-3 text-sm shadow-lg shadow-primary/30 hover:bg-sky-900 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary"
-                >
-                  Submit
-                </button>
-                <button
-                  type="button"
-                  onClick={resetQuiz}
-                  className="flex-1 rounded-xl border border-slate-200 text-primary font-semibold px-4 py-3 text-sm hover:bg-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40"
-                >
-                  Reset
-                </button>
-              </div>
-            )}
-
-            {status === 'finished' && (
-              <div className="mt-6 flex flex-col gap-3">
-                <Results
-                  score={result.score}
-                  total={selectedQuiz?.questions.length || 0}
-                  autoSubmitted={result.autoSubmitted}
-                />
-                <button
-                  type="button"
-                  onClick={resetQuiz}
-                  className="self-start rounded-xl border border-slate-200 text-primary font-semibold px-4 py-2 text-sm hover:bg-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/40"
-                >
-                  Start Over
-                </button>
-              </div>
-            )}
-          </section>
-        </div>
-      </main>
-    </div>
-  );
+                  <button
+                    type="button"
+                    onClick={resetQuiz}
+                    className="self-start rounded-xl border border-amber-200 text-primary font-semibold px-4 py-2 text-sm hover:bg-amber-50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-200"
+                  >
+                    Start Over
+                  </button>
+                </div>
+              )}
+            </section>
+          </div>
+        </main>
+      </div>
+    );
 }
 
 export default App;
